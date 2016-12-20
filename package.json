@@ -8,7 +8,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "npm run test && webpack -p --define process.env.NODE_ENV='\"production\"' --progress src/index.js dist/bundle.js",
-    "build-example": "webpack --define process.env.NODE_ENV='\"development\"' --progress example/index.js example/bundle.js",
+    "build-example": "npm run test && webpack --define process.env.NODE_ENV='\"development\"' --progress example/index.js example/bundle.js",
     "start": "python -m SimpleHTTPServer 8000 example",
     "test": "BABEL_JEST_STAGE=0 jest || true",
     "watch-example": "webpack --define process.env.NODE_ENV='\"development\"' --progress --watch example/index.js example/bundle.js"
