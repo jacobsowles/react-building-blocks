@@ -1,11 +1,24 @@
 import React, { Component, PropTypes } from 'react';
+import styles from './Sidebar.scss';
 
 class Sidebar extends Component {
     render() {
-        const {children, className, ...props} = this.props;
+        const {children, className, height, style, width, ...props} = this.props;
+
+        if (height && !style.height) {
+            style.height = height;
+        }
+
+        if (width && !style.width) {
+            style.width = width;
+        }
 
         return (
-            <aside className={`sidebar ${className}`.trim()} {...props}>
+            <aside
+                className={`sidebar ${className}`.trim()}
+                style={style}
+                {...props}
+            >
                 {children}
             </aside>
         );
@@ -26,11 +39,15 @@ Sidebar.propTypes = {
         return result;
     },
 
-    className: PropTypes.string
+    className: PropTypes.string,
+    height: PropTypes.string,
+    style: PropTypes.object,
+    width: PropTypes.string
 };
 
 Sidebar.defaultProps = {
-    className: ''
+    className: '',
+    style: {}
 };
 
 export default Sidebar;

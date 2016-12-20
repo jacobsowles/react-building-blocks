@@ -7,13 +7,11 @@
   },
   "version": "0.1.0",
   "scripts": {
-    "build-dev": "npm run test && webpack --define process.env.NODE_ENV='\"development\"' --progress",
-    "build-example": "npm run test && webpack --define process.env.NODE_ENV='\"development\"' --progress ./example/index.js ./example/bundle.js",
-    "build-prod": "npm run test && webpack -p --define process.env.NODE_ENV='\"production\"' --progress",
+    "build": "npm run test && webpack -p --define process.env.NODE_ENV='\"production\"' --progress src/index.js dist/bundle.js",
+    "build-example": "webpack --define process.env.NODE_ENV='\"development\"' --progress example/index.js example/bundle.js",
     "start": "python -m SimpleHTTPServer 8000 example",
     "test": "BABEL_JEST_STAGE=0 jest || true",
-    "watch": "webpack --define process.env.NODE_ENV='\"development\"' --progress --watch",
-    "watch-example": "webpack --define process.env.NODE_ENV='\"development\"' --progress --watch ./example/index.js ./example/bundle.js"
+    "watch-example": "webpack --define process.env.NODE_ENV='\"development\"' --progress --watch example/index.js example/bundle.js"
   },
   "peerDependencies": {
     "react": ">=0.14.0",
@@ -28,7 +26,6 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-root-import": "^4.1.3",
     "babel-runtime": "^6.11.6",
     "css-loader": "^0.23.1",
     "eslint": "^3.3.1",

@@ -5,11 +5,6 @@ module.exports = {
     eslint: {
         configFile: '.eslintrc'
     },
-    entry: './src/index.js',
-    output: {
-        path: './dist',
-        filename: 'bundle.js'
-    },
     plugins: [
         new LiveReloadPlugin()
     ],
@@ -31,7 +26,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ['style', 'css', 'sass'],
-                include: '/src/'
+                include: /src/
             }
         ]
     }
