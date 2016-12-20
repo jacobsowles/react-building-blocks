@@ -1,7 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import styles from './Sidebar.scss';
 
 class Sidebar extends Component {
+
+    constructor(props) {
+        super(props);
+
+        const baseStyles = {
+            display: 'inline-block'
+        };
+    }
+
     render() {
         const {children, className, height, style, width, ...props} = this.props;
 
@@ -16,7 +24,10 @@ class Sidebar extends Component {
         return (
             <aside
                 className={`sidebar ${className}`.trim()}
-                style={style}
+                style={{
+                    ...this.baseStyles,
+                    ...style
+                }}
                 {...props}
             >
                 {children}
