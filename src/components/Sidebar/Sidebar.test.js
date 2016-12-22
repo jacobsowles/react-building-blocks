@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sidebar from './Sidebar.jsx';
-import SidebarModule from '../SidebarModule/SidebarModule.jsx';
+import Sidebar from './Sidebar';
+import SidebarModule from '../SidebarModule/SidebarModule';
 import TestUtils from 'react-addons-test-utils';
 
 describe('Sidebar', () => {

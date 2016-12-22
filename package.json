@@ -7,17 +7,17 @@
   },
   "version": "0.1.0",
   "scripts": {
-    "build": "npm run test && webpack -p --define process.env.NODE_ENV='\"production\"' --progress src/index.js dist/bundle.js",
-    "build-example": "npm run test && webpack --define process.env.NODE_ENV='\"development\"' --progress example/index.js example/bundle.js",
-    "start": "python -m SimpleHTTPServer 8000 example",
-    "test": "BABEL_JEST_STAGE=0 jest || true",
-    "watch-example": "webpack --define process.env.NODE_ENV='\"development\"' --progress --watch example/index.js example/bundle.js"
+    "dev": "cd docs && npm install && open 'http://localhost:8080' && NODE_ENV=development webpack-dev-server --inline --hot",
+    "docs:release": "cd docs && rm -rf node_modules && npm install && NODE_ENV=production webpack --progress && git add -A && git commit -m \"Docs Version: $(node -p 'require(\"../package.json\").version')\"",
+    "release": "eslint src && babel src --out-dir dist",
+    "test": "BABEL_JEST_STAGE=0 jest || true"
   },
   "peerDependencies": {
     "react": ">=0.14.0",
     "react-dom": ">=0.14.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
     "babel-jest": "^16.0.0",
@@ -39,12 +39,15 @@
     "jest": "^16.0.1",
     "jest-cli": "^16.0.1",
     "jsx-loader": "^0.13.2",
+    "live-server": "^0.8.1",
     "node-sass": "^4.1.0",
     "react-addons-test-utils": "^15.4.1",
+    "react-router": "^3.0.0",
     "react-test-renderer": "^15.3.2",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2",
     "webpack-livereload-plugin": "^0.8.2"
   },
   "repository": {
@@ -55,9 +58,11 @@
   "bugs": {
     "url": "https://github.com/jrsowles/react-building-blocks/issues"
   },
+  "main": "dist/index.js",
   "files": [
     "*.md",
     "dist",
+    "docs",
     "LICENSE",
     "src"
   ],
@@ -65,10 +70,11 @@
     "react-building-blocks",
     "react",
     "react-component",
-    "component"
+    "component",
+    "UI",
+    "library"
   ],
   "license": "MIT",
-  "main": "dist/bundle.js",
   "jest": {
     "testRegex": "(/tests/.*|\\.test)\\.(js|jsx)$",
     "scriptPreprocessor": "./node_modules/babel-jest",

@@ -5,7 +5,7 @@ class Sidebar extends Component {
     constructor(props) {
         super(props);
 
-        const baseStyles = {
+        this.baseStyles = {
             display: 'inline-block'
         };
     }
@@ -61,4 +61,4 @@ Sidebar.defaultProps = {
     style: {}
 };
 
-export default Sidebar;
+module.exports = Sidebar;

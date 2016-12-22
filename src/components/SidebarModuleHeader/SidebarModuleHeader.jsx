@@ -21,4 +21,4 @@ SidebarModuleHeader.defaultProps = {
     className: ''
 };
 
-export default SidebarModuleHeader;
+module.exports = SidebarModuleHeader;
