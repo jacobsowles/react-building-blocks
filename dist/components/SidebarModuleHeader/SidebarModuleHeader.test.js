@@ -29,7 +29,7 @@ describe('SidebarModuleHeader', function () {
     };
 
     it('renders a header element with the appropriate class name', function () {
-        expect(renderedDOM().tagName).toEqual('H2');
+        expect(renderedDOM().tagName).toEqual('H6');
 
         expect(renderedDOM().className).toEqual('sidebar-module-header');
     });

@@ -7,7 +7,6 @@ describe('SidebarModule', () => {
     const component = (headerText) => TestUtils.renderIntoDocument(
         <SidebarModule header={headerText}>
             <p>Some content</p>
-            <p>Some more content</p>
         </SidebarModule>
     );
     const renderedDOM = (headerText) => ReactDOM.findDOMNode(component(headerText));
@@ -20,21 +19,13 @@ describe('SidebarModule', () => {
             .toEqual('sidebar-module');
     });
 
-    it('renders all children', () => {
-        expect(renderedDOM().children.length)
-            .toEqual(2);
-    });
-
-    it('renders all child content', () => {
-        expect(renderedDOM().children[0].textContent)
-            .toEqual('Some content');
-
-        expect(renderedDOM().children[1].textContent)
-            .toEqual('Some more content');
-    });
-
-    it('renders a header first if specified', () => {
+    it('renders header', () => {
         expect(renderedDOM('Header Text').children[0].tagName)
-            .toEqual('H2');
+            .toEqual('H6');
+    });
+
+    it('renders child content', () => {
+        expect(renderedDOM('Header Text').children[1].tagName)
+            .toEqual('P');
     });
 });

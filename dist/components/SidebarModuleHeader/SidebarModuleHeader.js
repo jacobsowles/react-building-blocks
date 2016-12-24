@@ -36,7 +36,7 @@ var SidebarModuleHeader = function (_React$Component) {
                 props = _objectWithoutProperties(_props, ['children', 'className']);
 
             return _react2.default.createElement(
-                'h2',
+                'h6',
                 _extends({ className: ('sidebar-module-header ' + className).trim() }, props),
                 children
             );

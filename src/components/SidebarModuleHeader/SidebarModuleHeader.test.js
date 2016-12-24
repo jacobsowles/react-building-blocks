@@ -9,7 +9,7 @@ describe('SidebarModuleHeader', () => {
 
     it('renders a header element with the appropriate class name', () => {
         expect(renderedDOM().tagName)
-            .toEqual('H2');
+            .toEqual('H6');
 
         expect(renderedDOM().className)
             .toEqual('sidebar-module-header');

@@ -27,11 +27,6 @@ describe('SidebarModule', function () {
                 'p',
                 null,
                 'Some content'
-            ),
-            _react2.default.createElement(
-                'p',
-                null,
-                'Some more content'
             )
         ));
     };
@@ -45,17 +40,11 @@ describe('SidebarModule', function () {
         expect(renderedDOM().className).toEqual('sidebar-module');
     });
 
-    it('renders all children', function () {
-        expect(renderedDOM().children.length).toEqual(2);
+    it('renders header', function () {
+        expect(renderedDOM('Header Text').children[0].tagName).toEqual('H6');
     });
 
-    it('renders all child content', function () {
-        expect(renderedDOM().children[0].textContent).toEqual('Some content');
-
-        expect(renderedDOM().children[1].textContent).toEqual('Some more content');
-    });
-
-    it('renders a header first if specified', function () {
-        expect(renderedDOM('Header Text').children[0].tagName).toEqual('H2');
+    it('renders child content', function () {
+        expect(renderedDOM('Header Text').children[1].tagName).toEqual('P');
     });
 });

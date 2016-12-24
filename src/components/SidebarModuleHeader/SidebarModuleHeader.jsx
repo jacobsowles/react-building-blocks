@@ -5,9 +5,9 @@ class SidebarModuleHeader extends React.Component {
         const {children, className, ...props} = this.props;
 
         return (
-            <h2 className={`sidebar-module-header ${className}`.trim()} {...props}>
+            <h6 className={`sidebar-module-header ${className}`.trim()} {...props}>
                 {children}
-            </h2>
+            </h6>
         );
     }
 }
