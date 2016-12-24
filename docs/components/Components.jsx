@@ -18,6 +18,7 @@ class Components extends Component {
 
                 <h2>Text</h2>
                 <ul>
+                    <li><Link to='/components/page-subtitle'>PageSubtitle</Link></li>
                     <li><Link to='/components/page-title'>PageTitle</Link></li>
                 </ul>
 
