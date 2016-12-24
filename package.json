@@ -8,7 +8,7 @@
   "version": "0.2.1",
   "scripts": {
     "dev": "cd docs && npm install && open 'http://localhost:8080' && NODE_ENV=development webpack-dev-server --inline --hot",
-    "docs:release": "cd docs && rm -rf node_modules && npm install && NODE_ENV=production webpack --progress && git add -A && git commit -m \"Docs Version: $(node -p 'require(\"../package.json\").version')\"",
+    "docs:release": "cd docs && rm -rf node_modules && npm install && NODE_ENV=production webpack --progress",
     "release": "eslint src && babel src --out-dir dist",
     "test": "BABEL_JEST_STAGE=0 jest || true"
   },
