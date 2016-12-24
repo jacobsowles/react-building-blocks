@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SidebarModuleHeader from './SidebarModuleHeader.jsx';
+import SidebarModuleHeader from './SidebarModuleHeader';
 import TestUtils from 'react-addons-test-utils';
 
 describe('SidebarModuleHeader', () => {

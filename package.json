@@ -80,8 +80,12 @@
     "scriptPreprocessor": "./node_modules/babel-jest",
     "moduleFileExtensions": [
       "js",
+      "jsx",
       "json",
       "es6"
+    ],
+    "modulePathIgnorePatterns": [
+      ".*dist.*"
     ]
   },
   "babel": {

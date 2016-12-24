@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import SidebarModuleHeader from '../SidebarModuleHeader/SidebarModuleHeader';
+import SidebarModuleHeader from '../SidebarModuleHeader/SidebarModuleHeader.jsx';
 
 class SidebarModule extends React.Component {
     render() {
