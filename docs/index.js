@@ -6,6 +6,7 @@ import { hashHistory, Route, IndexRoute, Router } from 'react-router';
 // app modules
 import Components from 'components/Components';
 import Home from 'components/Home';
+import PageTitle from 'components/PageTitleDocs';
 import Sidebar from 'components/SidebarDocs';
 import SidebarHeader from 'components/SidebarHeaderDocs';
 import SidebarModule from 'components/SidebarModuleDocs';
@@ -26,6 +27,7 @@ render((
         <Route component={App} path='/'>
             <IndexRoute component={Home} />
             <Route component={Components} path='components'>
+                <Route component={PageTitle} path='page-title' />
                 <Route component={Sidebar} path='sidebar' />
                 <Route component={SidebarHeader} path='sidebar-header' />
                 <Route component={SidebarModule} path='sidebar-module' />

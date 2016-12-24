@@ -16,6 +16,11 @@ class Components extends Component {
                     <li><Link to='/components/sidebar-module-header'>SidebarModuleHeader</Link></li>
                 </ul>
 
+                <h2>Text</h2>
+                <ul>
+                    <li><Link to='/components/page-title'>PageTitle</Link></li>
+                </ul>
+
                 <div>
                     {this.props.children}
                 </div>
