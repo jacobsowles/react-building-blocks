@@ -6,9 +6,8 @@ import TestUtils from 'react-addons-test-utils';
 
 describe('Sidebar', () => {
     const component = TestUtils.renderIntoDocument(
-        <Sidebar>
+        <Sidebar header={<a href="/">Site Title</a>}>
             <SidebarModule><p>Content</p></SidebarModule>
-            <SidebarModule><p>More Content</p></SidebarModule>
         </Sidebar>
     );
     const renderedDOM = () => ReactDOM.findDOMNode(component);
@@ -21,8 +20,13 @@ describe('Sidebar', () => {
             .toEqual('sidebar');
     });
 
-    it('renders all children', () => {
-        expect(renderedDOM().children.length)
-            .toEqual(2);
+    it('renders SidebarHeader', () => {
+        expect(renderedDOM().children[0].tagName)
+            .toEqual('HEADER');
+    });
+
+    it('renders SidebarModule children', () => {
+        expect(renderedDOM().children[1].tagName)
+            .toEqual('DIV');
     });
 });

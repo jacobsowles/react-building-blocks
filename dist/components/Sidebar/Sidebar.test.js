@@ -25,7 +25,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 describe('Sidebar', function () {
     var component = _reactAddonsTestUtils2.default.renderIntoDocument(_react2.default.createElement(
         _Sidebar2.default,
-        null,
+        { header: _react2.default.createElement(
+                'a',
+                { href: '/' },
+                'Site Title'
+            ) },
         _react2.default.createElement(
             _SidebarModule2.default,
             null,
@@ -33,15 +37,6 @@ describe('Sidebar', function () {
                 'p',
                 null,
                 'Content'
-            )
-        ),
-        _react2.default.createElement(
-            _SidebarModule2.default,
-            null,
-            _react2.default.createElement(
-                'p',
-                null,
-                'More Content'
             )
         )
     ));
@@ -55,7 +50,11 @@ describe('Sidebar', function () {
         expect(renderedDOM().className).toEqual('sidebar');
     });
 
-    it('renders all children', function () {
-        expect(renderedDOM().children.length).toEqual(2);
+    it('renders SidebarHeader', function () {
+        expect(renderedDOM().children[0].tagName).toEqual('HEADER');
+    });
+
+    it('renders SidebarModule children', function () {
+        expect(renderedDOM().children[1].tagName).toEqual('DIV');
     });
 });

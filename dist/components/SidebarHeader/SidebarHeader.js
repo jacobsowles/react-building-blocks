@@ -8,10 +8,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _SidebarHeader = require('../SidebarHeader/SidebarHeader');
-
-var _SidebarHeader2 = _interopRequireDefault(_SidebarHeader);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -22,83 +18,41 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Sidebar = function (_Component) {
-    _inherits(Sidebar, _Component);
+var SidebarHeader = function (_React$Component) {
+    _inherits(SidebarHeader, _React$Component);
 
-    function Sidebar(props) {
-        _classCallCheck(this, Sidebar);
+    function SidebarHeader() {
+        _classCallCheck(this, SidebarHeader);
 
-        var _this = _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).call(this, props));
-
-        _this.baseStyles = {
-            display: 'inline-block'
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (SidebarHeader.__proto__ || Object.getPrototypeOf(SidebarHeader)).apply(this, arguments));
     }
 
-    _createClass(Sidebar, [{
+    _createClass(SidebarHeader, [{
         key: 'render',
         value: function render() {
             var _props = this.props,
                 children = _props.children,
                 className = _props.className,
-                header = _props.header,
-                height = _props.height,
-                style = _props.style,
-                width = _props.width,
-                props = _objectWithoutProperties(_props, ['children', 'className', 'header', 'height', 'style', 'width']);
-
-            if (height && !style.height) {
-                style.height = height;
-            }
-
-            if (width && !style.width) {
-                style.width = width;
-            }
+                props = _objectWithoutProperties(_props, ['children', 'className']);
 
             return _react2.default.createElement(
-                'aside',
-                _extends({
-                    className: ('sidebar ' + className).trim(),
-                    style: _extends({}, this.baseStyles, style)
-                }, props),
-                header ? _react2.default.createElement(
-                    _SidebarHeader2.default,
-                    null,
-                    header
-                ) : null,
+                'header',
+                _extends({ className: ('sidebar-header ' + className).trim() }, props),
                 children
             );
         }
     }]);
 
-    return Sidebar;
-}(_react.Component);
+    return SidebarHeader;
+}(_react2.default.Component);
 
-Sidebar.propTypes = {
-    children: function children(props, propName, componentName) {
-        var prop = props[propName];
-        var result = void 0;
-
-        _react2.default.Children.forEach(prop, function (child) {
-            if (child.type.name !== 'SidebarModule') {
-                result = new Error('`' + componentName + '` only accepts children of type `SidebarModule`.');
-            }
-        });
-
-        return result;
-    },
-
-    className: _react.PropTypes.string,
-    header: _react.PropTypes.node,
-    height: _react.PropTypes.string,
-    style: _react.PropTypes.object,
-    width: _react.PropTypes.string
+SidebarHeader.propTypes = {
+    children: _react.PropTypes.node,
+    className: _react.PropTypes.string
 };
 
-Sidebar.defaultProps = {
-    className: '',
-    style: {}
+SidebarHeader.defaultProps = {
+    className: ''
 };
 
-module.exports = Sidebar;
+module.exports = SidebarHeader;

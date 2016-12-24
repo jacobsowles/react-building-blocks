@@ -7,6 +7,7 @@ import { hashHistory, Route, IndexRoute, Router } from 'react-router';
 import Components from 'components/Components';
 import Home from 'components/Home';
 import Sidebar from 'components/SidebarDocs';
+import SidebarHeader from 'components/SidebarHeaderDocs';
 import SidebarModule from 'components/SidebarModuleDocs';
 import SidebarModuleHeader from 'components/SidebarModuleHeaderDocs';
 
@@ -26,6 +27,7 @@ render((
             <IndexRoute component={Home} />
             <Route component={Components} path='components'>
                 <Route component={Sidebar} path='sidebar' />
+                <Route component={SidebarHeader} path='sidebar-header' />
                 <Route component={SidebarModule} path='sidebar-module' />
                 <Route component={SidebarModuleHeader} path='sidebar-module-header' />
             </Route>

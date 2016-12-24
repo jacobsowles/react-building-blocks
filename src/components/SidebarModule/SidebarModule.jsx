@@ -9,11 +9,7 @@ class SidebarModule extends React.Component {
             <div className={`sidebar-module ${className}`.trim()} {...props}>
                 {
                     header
-                        ? (
-                            <SidebarModuleHeader>
-                                {header}
-                            </SidebarModuleHeader>
-                        )
+                        ? <SidebarModuleHeader>{header}</SidebarModuleHeader>
                         : null
                 }
 

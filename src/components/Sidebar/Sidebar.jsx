@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import SidebarHeader from '../SidebarHeader/SidebarHeader';
 
 class Sidebar extends Component {
 
@@ -11,7 +12,7 @@ class Sidebar extends Component {
     }
 
     render() {
-        const {children, className, height, style, width, ...props} = this.props;
+        const {children, className, header, height, style, width, ...props} = this.props;
 
         if (height && !style.height) {
             style.height = height;
@@ -30,6 +31,12 @@ class Sidebar extends Component {
                 }}
                 {...props}
             >
+                {
+                    header
+                        ? <SidebarHeader>{header}</SidebarHeader>
+                        : null
+                }
+
                 {children}
             </aside>
         );
@@ -51,6 +58,7 @@ Sidebar.propTypes = {
     },
 
     className: PropTypes.string,
+    header: PropTypes.node,
     height: PropTypes.string,
     style: PropTypes.object,
     width: PropTypes.string

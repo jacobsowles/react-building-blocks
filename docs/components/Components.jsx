@@ -11,6 +11,7 @@ class Components extends Component {
                 <h2>Layout</h2>
                 <ul>
                     <li><Link to='/components/sidebar'>Sidebar</Link></li>
+                    <li><Link to='/components/sidebar-header'>SidebarHeader</Link></li>
                     <li><Link to='/components/sidebar-module'>SidebarModule</Link></li>
                     <li><Link to='/components/sidebar-module-header'>SidebarModuleHeader</Link></li>
                 </ul>
