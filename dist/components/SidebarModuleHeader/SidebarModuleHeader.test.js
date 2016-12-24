@@ -8,7 +8,7 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _SidebarModuleHeader = require('./SidebarModuleHeader.jsx');
+var _SidebarModuleHeader = require('./SidebarModuleHeader');
 
 var _SidebarModuleHeader2 = _interopRequireDefault(_SidebarModuleHeader);
 
