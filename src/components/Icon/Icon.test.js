@@ -19,8 +19,4 @@ describe('Icon', () => {
         expect(renderedDOM().className)
             .toMatch('fa fa-bars');
     });
-
-    // TODO: Test click handler
-    // TODO: Test that aria-hidden=true when no click handler is provided
-    // TODO: Test error when children are provided
 });

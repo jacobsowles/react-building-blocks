@@ -5,7 +5,7 @@
     "name": "Jacob Sowles",
     "email": "jrsowles@gmail.com"
   },
-  "version": "0.5.2",
+  "version": "0.6.0",
   "scripts": {
     "dev": "cd docs && npm install && open 'http://localhost:8080' && NODE_ENV=development webpack-dev-server --inline --hot",
     "docs:release": "cd docs && rm -rf node_modules && npm install && NODE_ENV=production webpack --progress",
@@ -94,5 +94,8 @@
       "es2015",
       "stage-0"
     ]
+  },
+  "dependencies": {
+    "radium": "^0.18.1"
   }
 }

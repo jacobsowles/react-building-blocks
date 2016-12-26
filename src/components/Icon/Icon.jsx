@@ -1,5 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import styles from './Icon.scss';
+import Radium from 'radium';
+
+const styles = {
+    base: {},
+    action: {
+        ':hover': {
+            cursor: 'pointer'
+        }
+    }
+};
 
 class Icon extends Component {
     render() {
@@ -8,7 +17,11 @@ class Icon extends Component {
         return (
             <i
                 aria-hidden={!onClick}
-                className={`icon fa fa-${glyph} ${onClick ? 'icon--action' : ''} ${className}`.trim()}
+                className={`icon fa fa-${glyph} ${className}`.trim()}
+                style={{
+                    ...styles[onClick ? 'action' : 'base'],
+                    ...style
+                }}
                 onClick={onClick}
                 {...props}
             />
@@ -39,4 +52,4 @@ Icon.defaultProps = {
     style: {}
 };
 
-module.exports = Icon;
+module.exports = Radium(Icon);
