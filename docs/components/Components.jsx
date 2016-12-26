@@ -8,6 +8,11 @@ class Components extends Component {
             <div>
                 <h1>Components</h1>
 
+                <h2>Icons</h2>
+                <ul>
+                    <li><Link to='/components/icon'>Icon</Link></li>
+                </ul>
+
                 <h2>Layout</h2>
                 <ul>
                     <li><Link to='/components/sidebar'>Sidebar</Link></li>

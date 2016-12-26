@@ -6,6 +6,7 @@ import { hashHistory, Route, IndexRoute, Router } from 'react-router';
 // app modules
 import Components from 'components/Components';
 import Home from 'components/Home';
+import Icon from 'components/IconDocs';
 import PageSubtitle from 'components/PageSubtitleDocs';
 import PageTitle from 'components/PageTitleDocs';
 import Sidebar from 'components/SidebarDocs';
@@ -28,6 +29,7 @@ render((
         <Route component={App} path='/'>
             <IndexRoute component={Home} />
             <Route component={Components} path='components'>
+                <Route component={Icon} path='icon' />
                 <Route component={PageSubtitle} path='page-subtitle' />
                 <Route component={PageTitle} path='page-title' />
                 <Route component={Sidebar} path='sidebar' />
